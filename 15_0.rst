@@ -1,0 +1,69 @@
+15.0 Bot Protection Instructions
+-----------------------------------------
+
+Welcome to the version 15.0 bot protection instructions. There are two sections in this guide part:
+
+15.0 Guided Condifugration profile creation
+-------------------------------------------------
+
+This is the documentation for configuring a bot protection profile via the guided configuration utility.
+
+    a. Select the "Security" menu item on the left hand side of your Big-IP admin GUI and then select "Guided Configuration":
+
+    .. image:: ./images/15.0.a.1.png
+
+    b. Click on the "Web Application Protection" button and then on the newly displayed "Bot Protection" button:
+
+    .. image:: ./images/15.0.a.2.png
+
+    c. An overview page is displayed for the Bot Protection guided configuration; click the "Next" button:
+
+    .. image:: ./images/15.0.a.3.png
+
+    d. Give the configuration a name, leave the policy transparent, relaxed and challenge free. Ensure you set all Mitigation settings to "Alarm" and then click the "Save and Next" button:
+
+    .. image:: ./images/15.0.a.4.png
+
+    e. Assign the virtual server(s) that you want to apply the policy to and click the "Save and Next" button:
+
+    .. image:: ./images/15.0.a.5.png
+
+    f. Check your settings and then click the "Deploy" button:
+
+    .. image:: ./images/15.0.a.6.png
+
+    g. Once your configuration is deployed, you will get a message saying it's completed - click the "Finish" button:
+
+    .. image:: ./images/15.0.a.7.png
+
+Your Bot Protection profile has now been successfully put in place with non intrusing (signature matching only) detections and transparent mitigation mode (alarming/alerting only).
+
+To see what bot traffic is being picked up by your Big-IP, click on "security" -> "Event Logs" -> "Bot Defense" -> "Bot Traffic":
+
+    .. image:: ./images/15.0.a.8.png
+
+Your events dashboard will start to show results over time, here is an example of my simple magento site being targeted by bots. 
+
+    .. image:: ./images/15.0.a.9.png
+
+Note that "No Action" are legitimate human interactions and "Alarm" are all of the logging only events. There are no denied requests because we are operating in transparent mode; i.e.: not blocking. 
+
+As you get insight into the automated attacks targeting your organisation's applications, it is an easy matter of changing the policy type from transparent to blocking:
+
+    .. image:: ./images/15.0.a.10.png
+
+And the Bot "Mitigation Settings" for, as an example, "Malicious Bots" from "Alarm" to "Block":
+
+    .. image:: ./images/15.0.a.11.png
+
+This concludes the guided configuration instructions. For questions, advice, etc. please:
+
+* email: darth@f5.com
+* phone: 0438 004 362
+
+
+15.0 Manual profile creation
+-------------------------------------------
+
+I was going to write this up - and probably will in the future, but really - I mean REALLY! - do yourself a favour and use the guided configuration.
+

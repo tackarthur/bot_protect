@@ -1,0 +1,48 @@
+12.1 Proactive Bot Protection Instructions
+----------------------------------------------
+
+Welcome to the version 12.1 bot protection instructions; named Proactive bot defense in this release. These instructions create similar capability as available in the Unified Bot Defense relaxed (signature matching only) available in 14.x and above. In 15.x and above, this process is simplified ever more through the guided configuration construct.
+
+For additional information on Proactive bot defense, please see these additional resources:
+
+- https://clouddocs.f5.com/training/community/waf/html/class1/module4/module4.html
+- https://devcentral.f5.com/s/articles/proactive-bot-defense-using-big-ip-asm-25685
+
+12.1 Proactive bot defense profile creation
+-------------------------------------------------
+
+1. Go into Security -> DoS Protection and create a new policy:
+
+ .. image:: ./images/12.1.a.1.png
+
+2. Click into Application Security -> General Settings:
+
+ .. image:: ./images/12.1.a.2.png
+
+ **Note: I left everything default here.**
+ 
+3. Click on Proactive Bot Defence. Select ‘Operation Mode’ to be Always and uncheck ‘Block Suspicious Browsers’:
+
+ .. image:: ./images/12.1.a.3.png
+
+4. Click on Bot Signatures. Set Malicious Categories to ‘Report’. If you want additional insight/context, set the benign categories to report also:
+
+ .. image:: ./images/12.1.a.4.png
+
+5. Click on TPS based Detection. Change Operation Mode to transparent:
+
+ .. image:: ./images/12.1.a.5.png
+
+ **Note: make sure you don’t change any of the mitigations to use “Client Side Integrity Defense” because even in transparent mode this will still block clients that don’t support javascript.**
+ 
+ Leave stress based detection off.
+ 
+6. Click Heavy URL Protection. You can disable these is you want. If you want some visibility though, you could leave it enabled and set the Automatic Detection to enabled as well and then set a very large threshold to ensure you’re cautious about blocking. This will give some insight into URLs that would be susceptible to attack and/or URLs that are actually being targeted:
+
+ .. image:: ./images/12.1.a.6.png
+
+7. Leave Record Traffic disabled but note that this is actually a pretty cool feature that will allow you to do forensic captures while under attack for post incident analysis, provision to other parties (e.g.: ACSC), etc.:
+
+ .. image:: ./images/12.1.a.7.png
+
+Once you get the basics in place and get some visibility going, you can assess the scope of the problem. Once you get some confidence that it’s flagging real threats that should be blocked and low false positives, you can start changing things from transparent to blocking. As these are applied per Virtual Server (VS) – you could always have a ‘visibility’ policy that gets applied broadly and then have specific app policies or a stronged blocking policy that can be applied to VS’s that are under attack.
