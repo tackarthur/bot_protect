@@ -1,0 +1,4 @@
+This project is intended to provide F5 customers with BEST, ASM or AWAF instructions for enabling passive (signature matching only) and transparent (non blocking) bot detection profiles for their web application virtual servers.
+These instructions are provided as is and with no gurantee or warranty. All changes should be apropriately considered, tested, and implemented under standard enterprise change management practices. That said, these configurations *should* be low impact and low risk.
+The purpose of enabling such a profile is to gain visibility in to the scope of the malicious bot problem you are facing, gain confidence in the efficacy of malicious bot detections and safely move into blocking malicious bot interactions.
+Additionally, this visiiblity will give insights into the intent of the malicious automation that is targeting your organisation.
