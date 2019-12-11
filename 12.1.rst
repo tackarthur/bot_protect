@@ -45,4 +45,4 @@ For additional information on Proactive bot defense, please see these additional
 
  .. image:: ./images/12.1.a.7.png
 
-Once you get the basics in place and get some visibility going, you can assess the scope of the problem. Once you get some confidence that it’s flagging real threats that should be blocked and low false positives, you can start changing things from transparent to blocking. As these are applied per Virtual Server (VS) – you could always have a ‘visibility’ policy that gets applied broadly and then have specific app policies or a stronged blocking policy that can be applied to VS’s that are under attack.
+Once you get the basics in place and get some visibility going, you can assess the scope of the problem. Once you get some confidence that it’s flagging real threats that should be blocked and low false positives, you can start changing things from transparent to blocking. As these are applied per Virtual Server (VS) – you could always have a ‘visibility’ policy that gets applied broadly and then have specific app policies with blocking actions that can be applied to VS’s that are under attack and/or more critical.
