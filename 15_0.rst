@@ -38,6 +38,16 @@ This is the documentation for configuring a bot protection profile via the guide
 
 Your Bot Protection profile has now been successfully put in place with non intrusing (signature matching only) detections and transparent mitigation mode (alarming/alerting only).
 
+Navigate to each virtual server configured via the Guided Configuration in turn, and click the "Security" drop down and select "Policies".
+
+You will see that the guided configuration has aplied the newly created bot profile to your virtual server:
+
+    .. image:: ./images/15.0.a.12.png
+
+While you are in this area, scroll to the bottom of the configuration screen to the "Log Profile" section. Locate the "local-bot-defense" log profile, click the left arrows to move the profile from "Available" to "Selected" and then click the "update" button:
+
+    .. image:: ./images/15.0.a.13.png
+
 To see what bot traffic is being picked up by your Big-IP, click on "security" -> "Event Logs" -> "Bot Defense" -> "Bot Traffic":
 
     .. image:: ./images/15.0.a.8.png
